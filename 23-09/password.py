@@ -6,14 +6,7 @@ def get_new_password():
 		try:
 			if len(password) < 8:
 				raise ValueError
-
-			for i in list(password):
-				if i in ['0','1','2','3','4','5','6','7','8','9','0']:
-					break
-				else:
-					count+=1
-
-			if count == len(password):
+			if password.isalpha() == True:
 				raise TypeError
 			else:
 				password_sec = input("Enter password second time: ")
@@ -21,6 +14,7 @@ def get_new_password():
 					raise IOError
 				else:
 					print("Fine. Remember ur password: ", password_sec)
+					
 		except KeyboardInterrupt:
 			print("Not so quickly, dude! First enter the valid password! Try again.")
 			continue
