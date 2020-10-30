@@ -11,5 +11,5 @@ def nums(one, two):
 	two = extra
 
 	print(one, two)
-	
+
 nums(12, 3)

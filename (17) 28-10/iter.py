@@ -11,9 +11,10 @@ class RangeIter():
 
     def __next__(self):
         return random.randint(self._start, self._stop)
-    
-obj = RangeIter(1, 39)
+
+obj = RangeIter(40, 8970)
 it = iter(obj)
+
 while True:
     try:
         v = next(it)
