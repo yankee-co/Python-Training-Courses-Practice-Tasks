@@ -86,13 +86,13 @@ class Parallelogram(Shape2D):
         self.A = A
 
     @staticmethod
-    def sinus(self):
-        sinA = math.sin(self.A*(math.pi / 180))
-        return round(sinA, 3)
+    def to_rads(A):
+        rads = A*(math.pi / 180)
+        return round(rads, 2)
 
     @property
     def area(self):
-        S = self.a * self.b * self.sinus
+        S = self.a * self.b * math.sin(self.rads(self))
         return S
 
     def __eq__(self, other):
@@ -110,3 +110,4 @@ class Parallelogram(Shape2D):
 
 a = Parallelepiped(5, 10, 30)
 b = Parallelogram(10, 15, 30)
+print(b.to_rads(120))
