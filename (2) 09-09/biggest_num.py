@@ -22,7 +22,6 @@ if third > second and third > first:
 
 # 3
 
-max_val = first if first > second else second  
+max_val = first if first > second else second
 max_val = second if second > third else third
 print(max_val)
-

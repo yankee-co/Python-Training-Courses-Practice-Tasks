@@ -13,7 +13,7 @@ class FileIterator():
         return self
 
     def __next__(self):
-        self.counter+=1
+        self.counter += 1
         if self.counter < len(self.lines):
             return self.lines[self.counter]
         else:

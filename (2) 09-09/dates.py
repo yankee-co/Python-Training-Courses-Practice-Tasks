@@ -3,26 +3,26 @@ month = int(input("Enter month: "))
 year = int(input("Enter year: "))
 
 if year % 4 == 0 and month == 3 and day <= 29:
-	print("Date valid.")
+    print("Date valid.")
 
 elif year % 4 != 0 and month == 3 and day <= 28:
-	print("Date valid.")
+    print("Date valid.")
 
-elif month % 2 != 0 and month in range(1, 8) and day in range(1,32) and year in range(1,2021) and (month != 3):
-	print("Date valid.")
+elif month % 2 != 0 and month in range(1, 8) and day in range(1, 32) and year in range(1, 2021) and (month != 3):
+    print("Date valid.")
 
-elif month % 2 == 0 and month in range(1, 8) and day in range(1,31) and year in range(1,2021) and (month != 3):	
-	print("Date valid.")
+elif month % 2 == 0 and month in range(1, 8) and day in range(1, 31) and year in range(1, 2021) and (month != 3):
+    print("Date valid.")
 
-elif month % 2 != 0 and month in range(8, 13) and day in range(1,31) and year in range(1,2021) and (month != 3):
-	print("Date valid.")
+elif month % 2 != 0 and month in range(8, 13) and day in range(1, 31) and year in range(1, 2021) and (month != 3):
+    print("Date valid.")
 
-elif month % 2 == 0 and month in range(8, 13) and day in range(1,32) and year in range(1,2021) and (month != 3):	
-	print("Date valid.")
+elif month % 2 == 0 and month in range(8, 13) and day in range(1, 32) and year in range(1, 2021) and (month != 3):
+    print("Date valid.")
 
 else:
-	print("Invalid date.")
-	
+    print("Invalid date.")
+
 """
 1	January		31 days
 2	February	28 days, 29 in leap years

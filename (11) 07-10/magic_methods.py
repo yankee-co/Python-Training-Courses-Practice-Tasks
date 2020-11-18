@@ -1,5 +1,6 @@
 """ Vocabulary module """
 
+
 class Vocabulary:
 
     """ Vocabulary of english words and their translations """
@@ -11,7 +12,7 @@ class Vocabulary:
         value = value.capitalize()
         tupled = (value,)
         if key not in self.words.keys():
-            self.words.update({key:tupled})
+            self.words.update({key: tupled})
         else:
             self.words[key] += (value,)
         return self.words
@@ -62,12 +63,12 @@ class Vocabulary:
                 for value in self.words[ind]:
                     string.append(value)
             for ind in string:
-                count+=1
+                count += 1
             return count
         if word is not None:
             word = word.capitalize()
             for ind in self.words[word]:
-                count+=1
+                count += 1
             return count
         return None
 

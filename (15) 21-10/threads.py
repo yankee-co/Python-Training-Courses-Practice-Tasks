@@ -1,4 +1,4 @@
-import time, math, threading
+import math, threading
 
 start = 1 #int(input('Start: '))
 end = 4911 #int(input('End: '))

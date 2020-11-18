@@ -35,13 +35,11 @@ x = int(input("Find place of the num in fibonacci list: "))
 b = 0
 fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
 for i in fibonacci:
-	if fibonacci[b] == x:
-		print(x, "on the ", b+1, " place")
-		break
-	else:
-		if fibonacci[b] == fibonacci[-1]:
-			print("List finished, no match")
-		else:
-			b+=1
-
-	
+    if fibonacci[b] == x:
+        print(x, "on the ", b + 1, " place")
+        break
+    else:
+        if fibonacci[b] == fibonacci[-1]:
+            print("List finished, no match")
+        else:
+            b += 1

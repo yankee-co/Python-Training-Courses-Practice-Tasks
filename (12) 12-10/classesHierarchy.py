@@ -36,4 +36,4 @@ class JS(Interpretable):
 
 
 JsInst = JS()
-print(JsInst.validate(1344,str))
+print(JsInst.validate(1344, str))

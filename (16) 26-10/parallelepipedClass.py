@@ -1,45 +1,57 @@
 from abc import ABC, abstractmethod
 import math
 
+
 class Volumetric(ABC):
     @abstractmethod
     def volume(self):
         pass
+
 
 class Area(ABC):
     @abstractmethod
     def area(self):
         pass
 
+
 class Shape3D(Volumetric, Area, ABC):
     @abstractmethod
     def __eq__(self, other):
         pass
+
     def __ne__(self, other):
         pass
+
     def __gt__(self, other):
         pass
+
     def __lt__(self, other):
         pass
+
 
 class Sphere(Shape3D):
     def __init__(self, radius):
         self.radius = radius
-        self.V = 4/3 * math.pi * self.radius**3
+        self.V = 4 / 3 * math.pi * self.radius**3
 
     def area(self):
-        S = 4*math.pi*pov(self.radius, 2)
+        S = 4 * math.pi * pov(self.radius, 2)
+
 
 class Shape2D(Area, ABC):
     @abstractmethod
     def __eq__(self, other):
         pass
+
     def __ne__(self, other):
         pass
+
     def __gt__(self, other):
         pass
+
     def __lt__(self, other):
         pass
+
 
 class Parallelepiped(Shape3D):
     length: float
@@ -58,7 +70,7 @@ class Parallelepiped(Shape3D):
 
     @property
     def area(self):
-        A = 2*(self.length + self.width + self.height)
+        A = 2 * (self.length + self.width + self.height)
         return A
 
     def __str__(self):
@@ -67,16 +79,18 @@ class Parallelepiped(Shape3D):
     def __eq__(self, other):
         """ equal """
         return self.volume == other.volume
+
     def __ne__(self, other):
         """ not equal """
         return self.volume != other.volume
+
     def __gt__(self, other):
         """ greater """
         return self.volume > other.volume
+
     def __lt__(self, other):
         """ lower """
         return self.volume < other.volume
-
 
 
 class Parallelogram(Shape2D):
@@ -87,7 +101,7 @@ class Parallelogram(Shape2D):
 
     @staticmethod
     def to_rads(A):
-        rads = A*(math.pi / 180)
+        rads = A * (math.pi / 180)
         return round(rads, 2)
 
     @property
@@ -98,15 +112,19 @@ class Parallelogram(Shape2D):
     def __eq__(self, other):
         """ equal """
         return self.area == other.area
+
     def __ne__(self, other):
         """ not equal """
         return self.area != other.area
+
     def __gt__(self, other):
         """ greater """
         return self.area > other.area
+
     def __lt__(self, other):
         """ lower """
         return self.area < other.area
+
 
 a = Parallelepiped(5, 10, 30)
 b = Parallelogram(10, 15, 30)

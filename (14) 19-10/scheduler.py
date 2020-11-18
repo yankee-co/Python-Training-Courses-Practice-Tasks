@@ -1,6 +1,7 @@
 import datetime
 from singleton_decorator import singleton
 
+
 @singleton
 class Scheduler:
     """Scheduler class for booking time slots"""
@@ -31,7 +32,7 @@ class Scheduler:
         while start < end:
             if start not in self._booked_slots:
                 slots.append(start)
-            start = start + timedelta(minutes = self._slot_length)
+            start = start + timedelta(minutes=self._slot_length)
 
         return slots
 
@@ -62,7 +63,7 @@ class Scheduler:
         while start < end:
             if start not in self._booked_slots:
                 minutes += start.minute
-            start = start + timedelta(minutes = self._slot_length)
+            start = start + timedelta(minutes=self._slot_length)
         if minutes >= 60:
             return f'{minutes/60}, free hours'
         return f'{minutes} free minutes'
@@ -78,6 +79,7 @@ class Scheduler:
         if dt in self.booked_slots:
             return True
         return False
+
 
 class Slot():
     """ Book info """
@@ -98,6 +100,8 @@ class Slot():
 
     @property
     def end_at(self):
-        return (self.dt + datetime.timedelta(minutes = self.length)).time()
+        return (self.dt + datetime.timedelta(minutes=self.length)).time()
+
+
 #dt = datetime.datetime(2020, 12, 25, 16, 30)
-ins = Slot(year = 2020, month = 12, day = 15, hour = 16, minute = 15, length = 15)
+ins = Slot(year=2020, month=12, day=15, hour=16, minute=15, length=15)

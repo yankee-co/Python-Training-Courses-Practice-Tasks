@@ -1,5 +1,6 @@
 import random
 
+
 class RangeIter():
 
     def __init__(self, start, stop):
@@ -11,6 +12,7 @@ class RangeIter():
 
     def __next__(self):
         return random.randint(self._start, self._stop)
+
 
 obj = RangeIter(40, 8970)
 it = iter(obj)
